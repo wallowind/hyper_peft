@@ -41,7 +41,7 @@ class HyperLinear(torch.nn.Module):
         self.weight = self.layer.weight
 
     def forward(self, x: torch.Tensor):
-        print(x.dtype, self.hyper.dtype, self.layer.weight.dtype)
+        # print(x.dtype, self.hyper.dtype, self.layer.weight.dtype)
         if self.is_A:
             return self.layer(x @ self.hyper)
         return self.layer(x) @ self.hyper
